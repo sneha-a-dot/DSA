@@ -1,6 +1,5 @@
 class MyStack {
-    Queue<Integer> queue;
-
+     Queue<Integer> queue;
     public MyStack() {
         queue = new LinkedList<>();
         
@@ -8,16 +7,15 @@ class MyStack {
     
     public void push(int x) {
         queue.add(x);
-        int size = queue.size();
+        int size= queue.size();
         for(int i=0; i<size-1; i++){
-            queue.add(queue.remove());
+            queue.add(queue.remove());  //remove from the front and added it back in rear
+            //So the queue will be reverse
         }
-        
     }
     
     public int pop() {
-        return queue.remove();
-        
+          return queue.remove();
     }
     
     public int top() {
@@ -26,7 +24,8 @@ class MyStack {
     }
     
     public boolean empty() {
-         return queue.isEmpty();
+        return queue.isEmpty();
+        
     }
 }
 
